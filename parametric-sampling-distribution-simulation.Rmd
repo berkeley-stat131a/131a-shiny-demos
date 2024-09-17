@@ -1,5 +1,18 @@
+---
+title: "Parametric Sampling Distribution Simulation"
+output: html_document
+runtime: shiny
+date: "2024-09-16"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
 library(shiny)
 library(tidyverse)
+```
+
+```{r correlate, echo = FALSE}
 
 ui = fluidPage(
   titlePanel("STAT 131A Parametric sampling distribution simulation"),
@@ -146,7 +159,9 @@ ui = fluidPage(
   )
   
 )
+```
 
+```{r server, echo = FALSE}
 server = function(input,output){
   
   # reactive to store all reactive variables
@@ -405,5 +420,10 @@ server = function(input,output){
   # })
   
 }
+```
 
-runApp(shinyApp(ui,server),launch.browser = TRUE)
+# Run the app
+
+```{r runApp, echo = FALSE}
+shinyApp(ui,server)
+```
